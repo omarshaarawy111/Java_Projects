@@ -1,0 +1,46 @@
+//Name :omar Mohamed abdelfatah sharawy ÚãÑ ãÍãÏ ÚÈÏÇáİÊÇÍ ÔÚÑÇæí
+//lab2 (2)
+//assignment 2
+package lab2problem2;
+import java.util.Scanner;
+public class Lab2problem2 {
+private static final int time = 5;
+     private static int Fibonacci(int n)  {
+       
+        int f1 = 1, f2 = 1, f = 1;
+        if (n <= 0) {
+            System.out.println("Error argument must be a positive integer");
+            System.exit(0);
+        }
+        
+        if (n == 1 || n == 2)
+            return 1;
+        
+        for (int i = 3; i < n; i++) {
+            f = f1 + f2;
+            f1 = f2;
+            f2 = f;       
+        }
+        return f;
+    }
+     
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int pounds;     
+        int days;       
+        int fib;        
+        
+        System.out.println("Please enter size in pounds of population");
+        pounds = scan.nextInt();
+        
+        System.out.println("Please enter number of days we wish to observe");
+        days = scan.nextInt();
+        
+        fib = days / 5;
+        
+        System.out.printf("Population of the green crud after %d days: %n", days);
+        System.out.println(Fibonacci(fib) * pounds + " "); 
+    }
+    
+}
+
